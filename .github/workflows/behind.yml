@@ -1,0 +1,27 @@
+name: Behind-PF
+
+on: 
+  pull_resquest:
+    types:
+      - opened
+      - reopend
+    branches:
+      - main
+
+jobs:
+  protect_hehind:
+  runs-on: ubuntu-latest
+  
+  steps:
+  - uses: actions/checkout@v3
+
+  - name: Comentarios 
+    run: |
+      echo "SUCESSO= Sucesso - A sua branch não possui commits behind em release a main." >> $GITHUB_ENV 
+      echo "ERRO_BEHIND= ERRO - A sua branch tem commit behind em relação a main, por favor, atualize a sua branch." >> $GITHUB_ENV 
+      echo "AMBIENTE_TEST= ERRO - A sua branch esta suja com commits da branch ambiente-test." >> $GITHUB_ENV 
+      echo "PARAMETROS_ERRADOS= ERRO - Os parametros obrigatorios não foram passados." >> $GITHUB_ENV 
+
+  - name: Verifica parametros
+    run: |
+      if [-z ]

@@ -162,7 +162,7 @@ markdown_extensions:
 
 # Page tree
 nav:
-  #- Home: index.md
+  - Home: overrides/home.html
   - Calendario: calendar.md
   - Getting started:
       - Installation: getting-started.md

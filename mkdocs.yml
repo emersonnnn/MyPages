@@ -15,7 +15,7 @@ copyright: Copyright &copy; 2016 - 2022 Martin Donath
 # Configuration
 theme:
   name: null
-  custom_dir: custom_theme/
+  custom_dir: material
 
   # Static files
   static_templates:
